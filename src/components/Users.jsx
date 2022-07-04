@@ -1,10 +1,9 @@
-import React, { useState, Fragment, useContext } from "react";
+import React, { useState, Fragment, useContext } from 'react';
 
-import UserCard from "./UserCard";
-import Spinner from "./Shared/Spinner";
+import UserCard from './UserCard';
+import Spinner from './Shared/Spinner';
 
-import githubContext from "./Context";
-
+import githubContext from '../Context';
 
 const Users = () => {
   const githubState = useContext(githubContext);
@@ -31,7 +30,7 @@ const Users = () => {
     );
   }
 
-  return <Fragment>{getUsersCards()}</Fragment>;
+  return <>{getUsersCards()}</>;
 };
 
 export default Users;

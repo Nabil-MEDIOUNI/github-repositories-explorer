@@ -1,22 +1,22 @@
-import React, { Fragment, useContext, useState } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import React, { Fragment, useContext, useState } from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
-import Alert from "./Alert";
+import Alert from './Alert';
 
-import githubContext from "../Context";
+import githubContext from '../../Context';
 
-import CLEAR_ICON from "../../assets/clear-icon.png";
+import CLEAR_ICON from '../../assets/clear-icon.png';
 
 const Search = () => {
   const githubState = useContext(githubContext);
   const { setAlert, users, clearUsers, searchUsers } = githubState;
-  const [getValue, setValue] = useState("");
+  const [getValue, setValue] = useState('');
 
   const onSubmit = (e) => {
     e.preventDefault();
     if (!getValue) {
-      setAlert(" Enter Something Please!", "danger");
+      setAlert(' Enter Something Please!', 'danger');
     } else {
       searchUsers(getValue);
     }
@@ -27,7 +27,7 @@ const Search = () => {
   };
 
   const clearSearch = () => {
-    setValue("");
+    setValue('');
     clearUsers();
   };
 
@@ -46,18 +46,20 @@ const Search = () => {
       );
     }
 
-    return "";
+    return '';
   }
 
   function getShowingUsersMessage() {
     if (users.length > 0) {
-      return <h6 className="showing-users-message">{`Showing users for "${getValue}"`}</h6>;
+      return (
+        <h6 className="showing-users-message">{`Showing users for "${getValue}"`}</h6>
+      );
     }
 
-    return "";
+    return '';
   }
   return (
-    <Fragment>
+    <>
       <Alert />
       <Form className="searchForm" onSubmit={onSubmit}>
         <Form.Group>
@@ -80,10 +82,8 @@ const Search = () => {
           </Button>
         </div>
       </Form>
-      <div>
-      {getShowingUsersMessage()}
-      </div>
-    </Fragment>
+      <div>{getShowingUsersMessage()}</div>
+    </>
   );
 };
 

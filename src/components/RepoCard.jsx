@@ -1,25 +1,26 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const RepoCard = props => {
+const RepoCard = ({ repo }) => {
   const {
     name,
-    html_url,
+    html_url: htmlUrl,
     description,
-    stargazers_count,
-  } = props.repo;
+    stargazers_count: stargazersCount,
+  } = repo;
 
   return (
     <div className="repoComp">
       <h2 className="repoName">
         {` ${name} `}
-        <a href={html_url} target="_blank" rel="noopener noreferrer">
+        <a href={htmlUrl} target="_blank" rel="noopener noreferrer">
           <i className="fas fa-external-link-alt" />
         </a>
       </h2>
       {description && <h2 className="repoDescription">{description}</h2>}
-      {stargazers_count > 0 && (
+      {stargazersCount > 0 && (
         <p className="repoOthers" title="Stargazers">
-          {` ${stargazers_count}`}
+          {` ${stargazersCount}`}
           <i className="fas fa-star" />
         </p>
       )}
@@ -28,17 +29,11 @@ const RepoCard = props => {
 };
 
 RepoCard.propTypes = {
-  name: PropTypes.string,
-  html_url: PropTypes.string,
-  description: PropTypes.string,
-  stargazers_count: PropTypes.number,
-}
+  repo: PropTypes.objectOf(PropTypes.string),
+};
 
 RepoCard.defaultProps = {
-  name: '',
-  html_url: '',
-  description: '',
-  stargazers_count: undefined,
-}
+  repo: {},
+};
 
 export default RepoCard;

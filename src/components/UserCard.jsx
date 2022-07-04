@@ -1,14 +1,14 @@
-import React, { useEffect, Fragment, useState } from "react";
+import React, { useEffect, Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
-import axios from "axios";
+import axios from 'axios';
 
-import ReposComp from "./RepoCard";
+import RepoCard from './RepoCard';
 
-import ARROW_ICON from "../assets/arrow-icon.png";
+import ARROW_ICON from '../assets/arrow-icon.png';
 
 const UsersItems = ({ user, getAllrepos, setAllRepos }) => {
   const [expandCard, setExpandCard] = useState({
-    cardId: "",
+    cardId: '',
     expanded: false,
   });
 
@@ -26,27 +26,27 @@ const UsersItems = ({ user, getAllrepos, setAllRepos }) => {
       expanded: !expandCard.expanded,
     });
   };
-  
+
   function getUserRepos(id) {
     if (expandCard.expanded && expandCard.cardId === id) {
       const filteredRepos = getAllrepos.filter(
-        ({ owner }) => user.id === owner.id
+        ({ owner }) => user.id === owner.id,
       );
-      console.log("filteredRepos", filteredRepos);
+      console.log('filteredRepos', filteredRepos);
       return (
         <>
           {filteredRepos.map((repo) => (
-            <ReposComp key={repo.id} repo={repo} />
+            <RepoCard key={repo.id} repo={repo} />
           ))}
         </>
       );
     }
 
-    return "";
+    return '';
   }
 
   return (
-    <Fragment>
+    <>
       <div className="userCard">
         <img className="userImage" src={user.avatar_url} alt="" />
         <h4 className="userName">{user.login}</h4>
@@ -58,7 +58,7 @@ const UsersItems = ({ user, getAllrepos, setAllRepos }) => {
           <img
             title="expand"
             className={`arrow-icon ${
-              expandCard.expanded && "reverse-arrow-icon"
+              expandCard.expanded && 'reverse-arrow-icon'
             }`}
             src={ARROW_ICON}
             alt=""
@@ -66,20 +66,20 @@ const UsersItems = ({ user, getAllrepos, setAllRepos }) => {
         </button>
       </div>
       {getUserRepos(user.id)}
-    </Fragment>
+    </>
   );
 };
 
 UsersItems.propTypes = {
   setAllRepos: PropTypes.func,
-  getAllrepos: PropTypes.any,
-  user: PropTypes.any,
-}
+  getAllrepos: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+  user: PropTypes.objectOf(PropTypes.string),
+};
 
 UsersItems.defaultProps = {
   setAllRepos: null,
   getAllrepos: undefined,
-  user: undefined,
-}
+  user: {},
+};
 
 export default UsersItems;

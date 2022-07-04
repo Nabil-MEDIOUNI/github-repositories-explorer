@@ -1,60 +1,61 @@
-import React, { Fragment } from "react";
-import '../404.css'
+import React, { Fragment } from 'react';
+import '../404.css';
+
 const NotFound = () => {
   return (
-    <Fragment>
+    <>
       <section>
-        <div class="ufo-container">
-          <div class="lifting-ray-container">
-            <div class="lifting-ray"></div>
-            <div class="lifting-ray-overlay"></div>
+        <div className="ufo-container">
+          <div className="lifting-ray-container">
+            <div className="lifting-ray" />
+            <div className="lifting-ray-overlay" />
           </div>
-          <div class="ufo">
-            <div class="ufo-glass">
-              <div class="alien">
-                <div class="alien-eye alien-eye-left"></div>
-                <div class="alien-eye alien-eye-right"></div>
-                <div class="alien-mouth"></div>
+          <div className="ufo">
+            <div className="ufo-glass">
+              <div className="alien">
+                <div className="alien-eye alien-eye-left" />
+                <div className="alien-eye alien-eye-right" />
+                <div className="alien-mouth" />
               </div>
             </div>
-            <div class="ufo-bottom"></div>
-            <div class="ufo-ring">
-              <div class="ufo-ring-light"></div>
-              <div class="ufo-ring-light"></div>
-              <div class="ufo-ring-light"></div>
-              <div class="ufo-ring-light"></div>
-              <div class="ufo-ring-light"></div>
-              <div class="ufo-ring-light"></div>
-              <div class="ufo-ring-light"></div>
-              <div class="ufo-ring-light"></div>
+            <div className="ufo-bottom" />
+            <div className="ufo-ring">
+              <div className="ufo-ring-light" />
+              <div className="ufo-ring-light" />
+              <div className="ufo-ring-light" />
+              <div className="ufo-ring-light" />
+              <div className="ufo-ring-light" />
+              <div className="ufo-ring-light" />
+              <div className="ufo-ring-light" />
+              <div className="ufo-ring-light" />
             </div>
           </div>
         </div>
 
         <h1> The page is out there </h1>
 
-        <div class="number number-left"> 4 </div>
-        <div class="number number-right"> 4 </div>
+        <div className="number number-left"> 4 </div>
+        <div className="number number-right"> 4 </div>
 
-        <div class="my-planet">
-          <div class="my-planet-rings my-planet-rings-back"></div>
-          <div class="my-planet-ellipsis-container">
-            <div class="my-planet-counter-rotation-container">
-              <div class="my-planet-planet">
-                <div class="my-planet-face">
-                  <div class="my-planet-eye my-planet-eye-left"></div>
-                  <div class="my-planet-eye my-planet-eye-right"></div>
-                  <div class="my-planet-mouth"></div>
+        <div className="my-planet">
+          <div className="my-planet-rings my-planet-rings-back" />
+          <div className="my-planet-ellipsis-container">
+            <div className="my-planet-counter-rotation-container">
+              <div className="my-planet-planet">
+                <div className="my-planet-face">
+                  <div className="my-planet-eye my-planet-eye-left" />
+                  <div className="my-planet-eye my-planet-eye-right" />
+                  <div className="my-planet-mouth" />
                 </div>
               </div>
             </div>
           </div>
-          <div class="my-planet-rings my-planet-rings-front"></div>
+          <div className="my-planet-rings my-planet-rings-front" />
         </div>
       </section>
-      <div class="stars"></div>
-      <div class="twinkling"></div>
-    </Fragment>
+      <div className="stars" />
+      <div className="twinkling" />
+    </>
   );
 };
 

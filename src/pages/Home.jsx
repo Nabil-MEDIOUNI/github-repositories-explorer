@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import Container from "react-bootstrap/Container";
+import Container from 'react-bootstrap/Container';
 
-import Search from "../components/Shared/Search";
-import Users from "../components/Users";
+import Search from '../components/Shared/Search';
+import Users from '../components/Users';
 
 const Home = () => {
   return (

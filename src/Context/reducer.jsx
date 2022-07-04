@@ -4,7 +4,7 @@ import {
   SET_LOADING,
   SET_ALERT,
   REMOVE_ALERT,
-} from "./types";
+} from './types';
 
 export default (state, action) => {
   switch (action.type) {

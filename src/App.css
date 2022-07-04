@@ -200,3 +200,7 @@ button:focus {
 ::-webkit-scrollbar-thumb {
   display: none;
 }
+
+iframe {
+  pointer-events: none;
+}

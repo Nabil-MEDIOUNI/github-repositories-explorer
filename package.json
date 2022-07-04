@@ -17,7 +17,7 @@
     "react-scripts": "4.0.3"
   },
   "scripts": {
-    "start": "yarb && react-scripts start",
+    "start": "yarn && react-scripts start",
     "build": "react-scripts build",
     "test:lint": "eslint --ext \"**/*.{js,jsx,ts,tsx,md}\" ./",
     "test:format": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",

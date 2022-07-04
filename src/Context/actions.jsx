@@ -1,8 +1,9 @@
-import React, { useReducer } from "react";
-import axios from "axios";
+import React, { useReducer } from 'react';
+import PropTypes from 'prop-types';
+import axios from 'axios';
 
-import GithubContext from ".";
-import GitHubReducer from "./reducer";
+import GithubContext from '.';
+import GitHubReducer from './reducer';
 
 import {
   SEARCH_USERS,
@@ -10,7 +11,7 @@ import {
   SET_LOADING,
   SET_ALERT,
   REMOVE_ALERT,
-} from "./types";
+} from './types';
 
 const State = (props) => {
   const initialState = {
@@ -21,11 +22,14 @@ const State = (props) => {
 
   const [state, dispatch] = useReducer(GitHubReducer, initialState);
 
-  //Get Users By Value Entered
+  // Set Loading To False
+  const setLoading = () => dispatch({ type: SET_LOADING });
+
+  // Get Users By Value Entered
   const searchUsers = async (value) => {
     setLoading();
     const res = await axios.get(
-      `https://api.github.com/search/users?q=${value}&per_page=5`
+      `https://api.github.com/search/users?q=${value}&per_page=5`,
     );
     dispatch({
       type: SEARCH_USERS,
@@ -33,17 +37,14 @@ const State = (props) => {
     });
   };
 
-  //Clear Users Button
+  // Clear Users Button
   const clearUsers = () => {
     if (state.users.length > 0) {
       dispatch({ type: CLEAR_USERS });
     }
   };
 
-  //Set Loading To False
-  const setLoading = () => dispatch({ type: SET_LOADING });
-
-  //Set Alert (Show Alert For 3s)
+  // Set Alert (Show Alert For 3s)
   const setAlert = (message, type) => {
     if (message.length > 0) {
       dispatch({ type: SET_ALERT, payload: { message, type } });
@@ -69,6 +70,6 @@ const State = (props) => {
 
 State.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
 export default State;

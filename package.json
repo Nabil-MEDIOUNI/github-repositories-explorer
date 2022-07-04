@@ -1,0 +1,61 @@
+{
+  "name": "github-repositories-explorer",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.21.2",
+    "bootstrap": "^4.4.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-dom": "^16.13.1",
+    "react-router-bootstrap": "^0.25.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "4.0.3"
+  },
+  "scripts": {
+    "start": "yarb && react-scripts start",
+    "build": "react-scripts build",
+    "test:lint": "eslint --ext \"**/*.{js,jsx,ts,tsx,md}\" ./",
+    "test:format": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint:check": "eslint --ext \"**/*.{js,jsx,ts,tsx,md}\" ./ --fix",
+    "format:check": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/eslint-parser": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-mdx": "^1.8.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "husky": "^6.0.0",
+    "nock": "^9.4.4",
+    "prettier": "^2.1.2"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
